@@ -22,6 +22,7 @@ header {
 
 h2 {
   padding-top: 10px;
+  text-align: center;
 }
 
 #stats__container {
@@ -70,6 +71,8 @@ button {
   border-radius: 10px;
   padding: 5px;
 }
+
+/* Game start modal */
 
 .start__modal {
   width: 100%;

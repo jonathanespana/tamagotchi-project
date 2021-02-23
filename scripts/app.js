@@ -81,3 +81,15 @@ $restBtn.on("click", function (event){
   console.log("clicked rest")
 });
 
+/* === Start Modal === */
+
+const setName = function setName (){
+  const $getName = $("input").val();
+  $nameEl.text(`Name: ${$getName}`);
+  console.log($getName);
+};
+
+$("#btn__submit").on("click", function (event){
+  setName();
+  $(".start__modal").css("display", "none");
+});
