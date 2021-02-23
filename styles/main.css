@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Stats container */
+header {
+  background-color: #91bf4b;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+h2 {
+  padding-top: 10px;
+}
+
+#stats__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+/* Gameplay Area Container */
+
+main {
+  height: calc(100% - 200px);
+}
+
+/* Footer */
+
+footer {
+  height: 100px;
+  background-color: #91bf4b;
+}
+/* Game Buttons Container */
+
+#game__controller {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+/* Game Buttons */
+
+.game__controls {
+  font-family: 'Press Start 2P', cursive;
+  width: 150px;
+  border-radius: 10px;
+  padding: 5px;
+}

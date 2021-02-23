@@ -10,14 +10,14 @@ let tiredLv = 0;
 // query game stats:  name, age, boredom, hunger, tired
 const $nameEl = $("#name");
 const $ageEl = $("#age");
-const $boredEl = $("#bored");
+const $boredomEl = $("#boredom");
 const $hungerEl = $("#hunger");
 const $tiredEl = $("#tired");
 
 // set game start stats
 
 $ageEl.text(`Age: ${age}`);
-$boredEl.text(`Boredom: ${boredomLv}`);
+$boredomEl.text(`Boredom: ${boredomLv}`);
 $hungerEl.text(`Hunger: ${hungerLv}`);
 $tiredEl.text(`Tired: ${tiredLv}`);
 
@@ -40,7 +40,7 @@ $playBtn.on("click", function (event){
     boredomLv -= 2;
     hungerLv += 1;
     tiredLv += 1;
-    $boredEl.text(`Boredom: ${boredomLv}`);
+    $boredomEl.text(`Boredom: ${boredomLv}`);
     $hungerEl.text(`Hunger: ${hungerLv}`);
     $tiredEl.text(`Tired: ${tiredLv}`);
   }
