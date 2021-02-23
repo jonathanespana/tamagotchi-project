@@ -93,8 +93,16 @@ const setTimer = function setTimer(){
     if (age === 15){
       clearInterval(timer);
     }
-    boring();
+    getBored();
     if (boredomLv >= 10){
+      clearInterval(timer);
+    }
+    getHungry();
+    if (hungerLv >= 10){
+      clearInterval(timer);
+    }
+    getTired();
+    if (tiredLv >= 10){
       clearInterval(timer);
     }
 
@@ -110,14 +118,32 @@ const aging = function aging(){
   }
 }
 
-/* === boring === */
-const boring = function boring(){
+/* === Boring === */
+
+const getBored = function getBored(){
   if (time % 5 === 0){
     boredomLv++;
     $boredomEl.text(`Boredom: ${boredomLv}`);
   }
 }
 
+/* === Hungry === */
+
+const getHungry = function getHungry(){
+  if (time % 10 === 0){
+    hungerLv++;
+    $hungerEl.text(`Hunger: ${hungerLv}`);
+  }
+}
+
+/* === GetTired === */
+
+const getTired = function getTired(){
+  if (time % 15 === 0){
+    tiredLv++;
+    $tiredEl.text(`Tired: ${tiredLv}`);
+  }
+}
 
 /* === Start Modal === */
 

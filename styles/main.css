@@ -47,6 +47,20 @@ h2 {
   object-fit: fill;
 }
 
+/* Dinosaur Sprite */
+
+#sprite__container {
+  z-index: 2;
+  position: absolute;
+  height: 200px;
+  transform: translateY(-202px);
+}
+
+#sprite {
+  height: 150px;
+  object-position: center;
+  object-fit: cover;
+}
 
 /* Footer */
 
@@ -84,6 +98,7 @@ button {
   justify-content: center;
   align-items: center;
   z-index: 5;
+  display: none;
 }
 
 .modal__container {
@@ -112,3 +127,4 @@ input {
   font-family: 'Press Start 2P', cursive;
   margin: 10px;
 }
+
