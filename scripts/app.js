@@ -32,10 +32,10 @@ const $restBtn = $("#rest");
  - boredom decrement by 2
  - hunger increment by 1
  - tired increment by 1
- - updated stats
+ - update stats
 */
 
-$playBtn.on("click", function (event) {
+$playBtn.on("click", function (event){
   if(boredomLv > 2)
     boredomLv -= 2;
     hungerLv += 1;
@@ -45,3 +45,20 @@ $playBtn.on("click", function (event) {
     $tiredEl.text(`Tired: ${tiredLv}`);
     console.log("clicked play")
 });
+
+/* === Feed ===
+ - target feed button with onclick event listener
+ - hunger decrement by 2
+ - tired increment by 1
+ - update stats
+*/
+
+$feedBtn.on("click", function (event){
+  if(hungerLv > 2)
+    hungerLv -= 2;
+    tiredLv += 1;
+    $hungerEl.text(`Hunger: ${hungerLv}`);
+    $tiredEl.text(`Tired: ${tiredLv}`);
+    console.log("clicked feed")
+});
+
