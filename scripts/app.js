@@ -93,6 +93,10 @@ const setTimer = function setTimer(){
     if (age === 15){
       clearInterval(timer);
     }
+    boring();
+    if (boredomLv >= 10){
+      clearInterval(timer);
+    }
 
   }, 1000);
 }
@@ -103,6 +107,14 @@ const aging = function aging(){
   if (time % 60 === 0){
     age++;
     $ageEl.text(`Age: ${age}`);
+  }
+}
+
+/* === boring === */
+const boring = function boring(){
+  if (time % 5 === 0){
+    boredomLv++;
+    $boredomEl.text(`Boredom: ${boredomLv}`);
   }
 }
 
