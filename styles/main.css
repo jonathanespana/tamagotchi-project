@@ -32,9 +32,20 @@ h2 {
 }
 /* Gameplay Area Container */
 
-main {
-  height: calc(100% - 200px);
+.gamescreen {
+  height: calc(100vh - 200px);
+  width: 100%;
+  overflow: hidden;
 }
+/* Background image */
+
+#bg__img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: fill;
+}
+
 
 /* Footer */
 
