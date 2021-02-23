@@ -81,9 +81,35 @@ $restBtn.on("click", function (event){
   console.log("clicked rest")
 });
 
+/* === Game clock === */
+
+let time = 0;
+
+const setTimer = function setTimer(){
+  const timer = setInterval(function (){
+    time++;
+    console.log("running", time)
+    aging();
+    if (age === 15){
+      clearInterval(timer);
+    }
+
+  }, 1000);
+}
+
+/* === Aging === */
+
+const aging = function aging(){
+  if (time % 60 === 0){
+    age++;
+    $ageEl.text(`Age: ${age}`);
+  }
+}
+
+
 /* === Start Modal === */
 
-const setName = function setName (){
+const setName = function setName(){
   const $getName = $("input").val();
   $nameEl.text(`Name: ${$getName}`);
   console.log($getName);
@@ -92,4 +118,5 @@ const setName = function setName (){
 $("#btn__submit").on("click", function (event){
   setName();
   $(".start__modal").css("display", "none");
+  setTimer();
 });
