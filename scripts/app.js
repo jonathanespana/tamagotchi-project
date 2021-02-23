@@ -90,20 +90,12 @@ const setTimer = function setTimer(){
     time++;
     console.log("running", time)
     aging();
-    if (age === 15){
-      clearInterval(timer);
-    }
     getBored();
-    if (boredomLv >= 10){
-      clearInterval(timer);
-    }
     getHungry();
-    if (hungerLv >= 10){
-      clearInterval(timer);
-    }
     getTired();
-    if (tiredLv >= 10){
+    if (tiredLv >= 10 || hungerLv >= 10 || boredomLv >= 10 || age === 15){
       clearInterval(timer);
+      gameover();
     }
 
   }, 1000);
@@ -143,6 +135,12 @@ const getTired = function getTired(){
     tiredLv++;
     $tiredEl.text(`Tired: ${tiredLv}`);
   }
+}
+
+/* === GameOver === */
+
+const gameover = function gameover(){
+  $("#endgame__modal").css("display", "flex");
 }
 
 /* === Start Modal === */
