@@ -3,9 +3,9 @@ console.log("=== Connected! ===")
 // game start stats: age, boredom, hunger, tired
 
 let age = 0;
-let boredomLv = 1;
-let hungerLv = 1;
-let tiredLv = 1;
+let boredomLv = 0;
+let hungerLv = 0;
+let tiredLv = 0;
 
 // query game stats:  name, age, boredom, hunger, tired
 const $nameEl = $("#name");
@@ -36,13 +36,14 @@ const $restBtn = $("#rest");
 */
 
 $playBtn.on("click", function (event){
-  if(boredomLv > 2)
+  if(boredomLv >= 2){
     boredomLv -= 2;
     hungerLv += 1;
     tiredLv += 1;
     $boredEl.text(`Boredom: ${boredomLv}`);
     $hungerEl.text(`Hunger: ${hungerLv}`);
     $tiredEl.text(`Tired: ${tiredLv}`);
+  }
     console.log("clicked play")
 });
 
@@ -54,11 +55,29 @@ $playBtn.on("click", function (event){
 */
 
 $feedBtn.on("click", function (event){
-  if(hungerLv > 2)
+  if(hungerLv >= 2){
     hungerLv -= 2;
     tiredLv += 1;
     $hungerEl.text(`Hunger: ${hungerLv}`);
     $tiredEl.text(`Tired: ${tiredLv}`);
+  }
     console.log("clicked feed")
+});
+
+/* === Rest === 
+ - target rest button with onclick event listener
+ - tired decrement by 3
+ - hunger increment by 1
+ - update stats
+*/
+
+$restBtn.on("click", function (event){
+  if(tiredLv >= 3){
+    tiredLv -= 3;
+    hungerLv += 1;
+    $hungerEl.text(`Hunger: ${hungerLv}`);
+    $tiredEl.text(`Tired: ${tiredLv}`);
+  }
+  console.log("clicked rest")
 });
 
