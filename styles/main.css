@@ -13,11 +13,15 @@ body {
 /* Stats container */
 header {
   background-color: #91bf4b;
-  height: 100px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
+}
+
+header h1 {
+  font-size: 28px;
 }
 
 h2 {
@@ -60,12 +64,16 @@ h2 {
   height: 150px;
   object-position: center;
   object-fit: cover;
+  animation-name: walk;
+  animation-duration: 10s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
 
 /* Footer */
 
 footer {
-  height: 100px;
+  height: 120px;
   background-color: #91bf4b;
 }
 /* Game Buttons Container */
@@ -155,4 +163,11 @@ input {
   width: 350px;
   padding: 10px;
   text-align: center;
+}
+
+/* keyFrames */
+
+@keyframes walk{
+  0% { transform: translateX(200px);}
+  100% { transform: translateX(1000px);}
 }
